@@ -1,6 +1,13 @@
-import { Column, Entity, JoinTable, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { City } from "./city.model";
-import { Tag } from "./tag.model";
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { City } from './city.model';
+import { Tag } from './tag.model';
 
 @Entity('events')
 export class Event {
@@ -8,7 +15,7 @@ export class Event {
   id: number;
 
   @Column({
-    length: 30
+    length: 30,
   })
   name: string;
 
@@ -23,8 +30,8 @@ export class Event {
 
   @ManyToMany(() => Tag)
   @JoinTable()
-  tags: Tag[]
+  tags: Tag[];
 
   @Column()
-  rating: number
+  rating: number;
 }

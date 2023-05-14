@@ -1,4 +1,4 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('cities')
 export class City {
@@ -6,7 +6,7 @@ export class City {
   id: number;
 
   @Column({
-    length: 30
+    length: 30,
   })
   name: string;
 }

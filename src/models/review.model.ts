@@ -1,11 +1,11 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { User } from "./user.model";
-import { Event } from "./event.model";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { User } from './user.model';
+import { Event } from './event.model';
 
 @Entity('reviews')
 export class Review {
   @PrimaryGeneratedColumn()
-  id: number
+  id: number;
 
   @ManyToOne(() => User)
   user: User;
@@ -14,9 +14,9 @@ export class Review {
   event: Event;
 
   @Column({
-    length: 1000
+    length: 1000,
   })
-  text: string
+  text: string;
 
   @Column()
   rating: number;

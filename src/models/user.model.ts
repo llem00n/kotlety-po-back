@@ -1,8 +1,15 @@
-import { Column, Entity, JoinTable, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Sex } from "./sex.model";
-import { City } from "./city.model";
-import { Tag } from "./tag.model";
-import { Event } from "./event.model";
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { Sex } from './sex.model';
+import { City } from './city.model';
+import { Tag } from './tag.model';
+import { Event } from './event.model';
 
 @Entity('users')
 export class User {
@@ -10,15 +17,15 @@ export class User {
   id: number;
 
   @Column({
-    unique: true
+    unique: true,
   })
   email: string;
 
   @Column()
-  password: string
+  password: string;
 
   @Column()
-  birthDate: Date
+  birthDate: Date;
 
   @ManyToOne(() => Sex)
   sex: Sex;
@@ -31,7 +38,7 @@ export class User {
 
   @ManyToMany(() => Event)
   @JoinTable()
-  likedEvents: Promise<Event[]>
+  likedEvents: Promise<Event[]>;
 
   @ManyToMany(() => Tag)
   @JoinTable()

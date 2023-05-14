@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('tags')
 export class Tag {
@@ -6,7 +6,7 @@ export class Tag {
   id: number;
 
   @Column({
-    length: 30
+    length: 30,
   })
   name: string;
 }

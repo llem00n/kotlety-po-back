@@ -131,6 +131,7 @@ dist
 
 # typeorm
 /migrations/
+/src/migrations/
 
 # sqlite
 db.sqlite
