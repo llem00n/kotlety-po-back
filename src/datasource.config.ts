@@ -1,5 +1,5 @@
 import { DataSourceOptions } from 'typeorm';
-import dotenv from 'dotenv'
+import * as dotenv from 'dotenv';
 dotenv.config();
 
 export function getConfig(): DataSourceOptions {
@@ -10,9 +10,7 @@ export function getConfig(): DataSourceOptions {
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
-    entities: [
-      __dirname + '/../**/*.model.ts',
-    ],
+    entities: [__dirname + '/../**/*.model.{js,ts}'],
     migrations: ['migrations/*{.ts,.js}'],
-  } as any
+  } as any;
 }
