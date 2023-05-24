@@ -2,12 +2,13 @@ import { DynamicModule, Module, Provider } from '@nestjs/common';
 import { UsersService } from './providers/users/users.service';
 import { DataSource } from 'typeorm';
 import { CitiesService } from './providers/cities/cities.service';
+import { SexService } from './providers/sex/sex.service';
 
-type Providers = UsersService | CitiesService;
+type Providers = UsersService | CitiesService | SexService;
 
 @Module({
-  providers: [UsersService, CitiesService],
-  exports: [UsersService, CitiesService]
+  providers: [UsersService, CitiesService, SexService],
+  exports: [UsersService, CitiesService, SexService]
 })
 export class DatabaseModule {
   /**
