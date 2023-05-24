@@ -6,6 +6,7 @@ import { AuthModule } from './modules/auth/auth.module';
 import { DatabaseModule } from './modules/database/database.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { getConfig } from './datasource.config';
+import { CitiesController } from './modules/cities/controllers/cities.controller';
 
 @Module({
   imports: [
@@ -17,7 +18,7 @@ import { getConfig } from './datasource.config';
     AuthModule,
     DatabaseModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController, CitiesController],
   providers: [AppService],
 })
 export class AppModule {}
