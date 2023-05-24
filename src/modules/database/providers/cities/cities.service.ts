@@ -13,6 +13,10 @@ export class CitiesService {
   async getAll(){
     return await this.repository.find();
   }
+
+  async getByName( name: string) {
+    return await this.repository.findOneBy({ name });
+  }
   
   async add (name: string){
     const newCity = this.repository.create({name: name});
